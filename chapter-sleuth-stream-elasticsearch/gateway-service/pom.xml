@@ -22,11 +22,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> <!-- MIGRATED: Renamed in Spring Cloud 2020+ -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zuul</artifactId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId> <!-- MIGRATED: Renamed; pinning version as removed from BOM in 2021.0.x -->
+			<version>3.0.4.RELEASE</version> <!-- MIGRATED: Explicit version for spring-cloud-netflix-zuul maintenance release -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -35,7 +36,7 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId> <!-- MIGRATED: spring-cloud-sleuth-zipkin-stream removed in Spring Cloud Sleuth 2.x+; replaced with spring-cloud-starter-sleuth (Zipkin integration via HTTP) -->
 
 		</dependency>
 		<dependency>

@@ -32,8 +32,8 @@ public class LoggerFilter extends ZuulFilter {
     @Override
     public Object run() {
 
-        tracer.addTag("operator","forezp");
-        System.out.print(tracer.getCurrentSpan().traceIdString());
+        tracer.currentSpan().tag("operator", "forezp"); // MIGRATED: tracer.addTag() removed in Spring Cloud Sleuth 3.x; use tracer.currentSpan().tag()
+        System.out.print(tracer.currentSpan().context().traceId()); // MIGRATED: getCurrentSpan().traceIdString() replaced with currentSpan().context().traceId() in Spring Cloud Sleuth 3.x
         return null;
     }
 }
