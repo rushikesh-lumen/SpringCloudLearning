@@ -29,11 +29,12 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId> <!-- MIGRATED: spring-cloud-starter-netflix-ribbon removed in Spring Cloud 2021+; replaced with spring-cloud-starter-loadbalancer -->
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>3.0.4.RELEASE</version> <!-- MIGRATED: Explicit version required - spring-cloud-starter-netflix-hystrix removed from Spring Cloud BOM in 2021.0.x -->
         </dependency>
     </dependencies>
 
