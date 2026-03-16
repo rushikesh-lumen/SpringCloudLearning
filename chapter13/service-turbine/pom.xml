@@ -30,11 +30,7 @@
 			<artifactId>spring-cloud-starter-netflix-turbine</artifactId> <!-- MIGRATED: Renamed; pinning version as removed from BOM in 2021.0.x -->
 			<version>3.0.4.RELEASE</version> <!-- MIGRATED: Explicit version for spring-cloud-netflix-turbine maintenance release -->
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-netflix-turbine</artifactId> <!-- MIGRATED: Removed from BOM in 2021.0.x; needs explicit version -->
-			<version>3.0.4.RELEASE</version> <!-- MIGRATED: Explicit version for spring-cloud-netflix-turbine maintenance release -->
-		</dependency>
+		<!-- MIGRATED: spring-cloud-netflix-turbine core library removed as redundant; spring-cloud-starter-netflix-turbine starter already includes it -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
