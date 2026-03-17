@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.RELEASE</version>
+        <version>3.3.0</version><!-- MIGRATED: Spring Boot 2.1.0.RELEASE → 3.3.0 -->
         <relativePath/>
     </parent>
 
@@ -26,9 +26,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
-        <spring-boot-admin.version>2.1.0</spring-boot-admin.version>
+        <java.version>17</java.version><!-- MIGRATED: Java 1.8 → 17 -->
+        <spring-cloud.version>2023.0.1</spring-cloud.version><!-- MIGRATED: Spring Cloud Finchley.SR2 → 2023.0.1 -->
+        <spring-boot-admin.version>3.3.0</spring-boot-admin.version><!-- MIGRATED: spring-boot-admin 2.1.0 → 3.3.0 (Spring Boot 3.x compatible) -->
     </properties>
 
     <dependencies>

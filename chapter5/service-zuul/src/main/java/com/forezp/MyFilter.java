@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest; // MIGRATED: javax.servlet.http.HttpServletRequest → jakarta.servlet.http.HttpServletRequest (Jakarta EE 9+)
 /**
  * Created by forezp on 2017/4/8.
  */

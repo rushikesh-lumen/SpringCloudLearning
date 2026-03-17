@@ -23,8 +23,8 @@
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
+			<groupId>com.mysql</groupId><!-- MIGRATED: mysql:mysql-connector-java → com.mysql:mysql-connector-j (renamed in MySQL 8.x) -->
+			<artifactId>mysql-connector-j</artifactId><!-- MIGRATED: mysql-connector-java renamed to mysql-connector-j -->
 		</dependency>
 
 		<dependency>
