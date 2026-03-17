@@ -22,13 +22,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+		<!-- MIGRATED: spring-boot-starter-web removed - Spring Cloud Gateway uses reactive WebFlux -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>  <!-- MIGRATED: spring-cloud-starter-netflix-zuul -> spring-cloud-starter-gateway -->
         </dependency>
     </dependencies>
 

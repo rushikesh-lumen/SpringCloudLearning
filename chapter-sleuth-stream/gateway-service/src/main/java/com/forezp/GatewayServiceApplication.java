@@ -2,15 +2,14 @@ package com.forezp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+// MIGRATED: @EnableZuulProxy removed - Spring Cloud Gateway is auto-configured
 @SpringBootApplication
-@EnableZuulProxy
-@EnableEurekaClient
+@EnableDiscoveryClient // MIGRATED: @EnableEurekaClient -> @EnableDiscoveryClient
 public class GatewayServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GatewayServiceApplication.class, args);
-	}
+public static void main(String[] args) {
+SpringApplication.run(GatewayServiceApplication.class, args);
+}
 }
