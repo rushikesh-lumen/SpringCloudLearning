@@ -20,7 +20,7 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
-            <version>2.1.0</version>
+            <version>3.3.0</version><!-- MIGRATED: spring-boot-admin 2.1.0 → 3.3.0 (Spring Boot 3.x compatible) -->
         </dependency>
 
         <dependency>

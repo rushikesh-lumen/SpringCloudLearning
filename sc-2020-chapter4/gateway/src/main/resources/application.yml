@@ -37,8 +37,9 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-spring.zipkin.sender.type: web
+# MIGRATED: spring.zipkin.sender.type removed in Spring Boot 3.x (always HTTP)
+# spring.zipkin.sender.type: web
 #设置采样率默认为 0.1 注意之前的版本是percentage 新版本中更换为 probability
-spring.sleuth.sampler.probability: 1
-spring.zipkin.base-url: http://localhost:9411/
-spring.zipkin.service.name: gateway
+management.tracing.sampling.probability: 1 # MIGRATED: spring.sleuth.sampler.probability → management.tracing.sampling.probability
+management.zipkin.tracing.endpoint: http://localhost:9411/api/v2/spans # MIGRATED: spring.zipkin.base-url → management.zipkin.tracing.endpoint
+# MIGRATED: spring.zipkin.service.name removed; use spring.application.name instead

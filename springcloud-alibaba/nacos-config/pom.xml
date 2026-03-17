@@ -11,7 +11,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version><!-- MIGRATED: Java 1.8 → 17 -->
 	</properties>
 
 

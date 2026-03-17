@@ -22,17 +22,23 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId><!-- MIGRATED: spring-cloud-starter-eureka renamed to spring-cloud-starter-netflix-eureka-client -->
 		</dependency>
 		<!--<dependency>-->
 			<!--<groupId>io.zipkin.java</groupId>-->
 			<!--<artifactId>zipkin-server</artifactId>-->
 		<!--</dependency>-->
 
+<!-- MIGRATED: io.zipkin.java embedded server is NOT compatible with Spring Boot 3.x.
+     In Spring Boot 3.x, run Zipkin as a standalone server:
+       docker run -d -p 9411:9411 openzipkin/zipkin
+     Or download from: https://zipkin.io/pages/quickstart.html -->
+		<!--
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-autoconfigure-ui</artifactId>
 		</dependency>
+		-->
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -43,8 +49,8 @@
 			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
+			<groupId>com.mysql</groupId><!-- MIGRATED: mysql:mysql-connector-java → com.mysql:mysql-connector-j (renamed in MySQL 8.x) -->
+			<artifactId>mysql-connector-j</artifactId><!-- MIGRATED: mysql-connector-java renamed to mysql-connector-j -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

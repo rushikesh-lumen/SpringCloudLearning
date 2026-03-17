@@ -14,20 +14,20 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>3.3.0</version><!-- MIGRATED: Spring Boot 1.5.2.RELEASE → 3.3.0 -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version><!-- MIGRATED: Java 1.8 → 17 -->
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix</artifactId>
+			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId><!-- MIGRATED: spring-cloud-starter-hystrix removed, replaced with Spring Cloud Circuit Breaker Resilience4J -->
 		</dependency>
 
 		<dependency>
@@ -35,17 +35,19 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<dependency>
+		<!-- MIGRATED: spring-cloud-starter-hystrix-dashboard removed in Spring Cloud 2020.x, use Actuator/Micrometer instead
+        <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
 		</dependency>
+        -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId><!-- MIGRATED: spring-cloud-starter-eureka renamed to spring-cloud-starter-netflix-eureka-client -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-ribbon</artifactId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId><!-- MIGRATED: spring-cloud-starter-ribbon removed in Spring Cloud 2020.x, replaced with spring-cloud-starter-loadbalancer -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -64,7 +66,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Dalston.RC1</version>
+				<version>2023.0.1</version><!-- MIGRATED: spring-cloud-dependencies Dalston.RC1 → 2023.0.1 -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

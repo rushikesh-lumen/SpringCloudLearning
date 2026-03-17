@@ -11,7 +11,8 @@ spring:
 
   sleuth:
     sampler:
-      percentage: 1.0
+      # MIGRATED: sleuth.sampler.percentage → management.tracing.sampling.probability
+      probability: 1.0 # MIGRATED: spring.sleuth.sampler.percentage → management.tracing.sampling.probability
     enabled: false
 
 

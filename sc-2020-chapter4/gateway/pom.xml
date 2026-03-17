@@ -8,8 +8,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>17</source><!-- MIGRATED: compiler source 8 → 17 -->
+                    <target>17</target><!-- MIGRATED: compiler target 8 → 17 -->
                 </configuration>
             </plugin>
         </plugins>
@@ -25,8 +25,8 @@
     <name>gateway</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>2020.0.2</spring-cloud.version>
+        <java.version>17</java.version><!-- MIGRATED: Java 1.8 → 17 -->
+        <spring-cloud.version>2023.0.1</spring-cloud.version><!-- MIGRATED: Spring Cloud 2020.0.2 → 2023.0.1 -->
     </properties>
     <dependencies>
 
@@ -59,9 +59,10 @@
             <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
         </dependency>
 
+        <!-- MIGRATED: spring-cloud-starter-sleuth removed in Spring Boot 3.x, replaced with Micrometer Tracing -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId><!-- MIGRATED: replaces spring-cloud-starter-sleuth -->
         </dependency>
 
         <dependency>

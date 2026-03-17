@@ -24,10 +24,15 @@
 		</dependency>
 		<!--compile('org.springframework.cloud:spring-cloud-starter-zipkin')-->
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
-		</dependency>
+		<!-- MIGRATED: spring-cloud-starter-zipkin removed, replaced with Micrometer Tracing -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId><!-- MIGRATED: replaces spring-cloud-starter-zipkin -->
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId><!-- MIGRATED: Zipkin reporter for Micrometer Tracing -->
+        </dependency>
 	</dependencies>
 
 	<build>

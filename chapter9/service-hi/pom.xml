@@ -14,14 +14,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>3.3.0</version><!-- MIGRATED: Spring Boot 1.5.2.RELEASE → 3.3.0 -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version><!-- MIGRATED: Java 1.8 → 17 -->
 	</properties>
 
 	<dependencies>
@@ -32,10 +32,15 @@
 		</dependency>
 		<!--compile('org.springframework.cloud:spring-cloud-starter-zipkin')-->
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
-		</dependency>
+		<!-- MIGRATED: spring-cloud-starter-zipkin removed, replaced with Micrometer Tracing -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId><!-- MIGRATED: replaces spring-cloud-starter-zipkin -->
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId><!-- MIGRATED: Zipkin reporter for Micrometer Tracing -->
+        </dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,7 +54,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Dalston.RC1</version>
+				<version>2023.0.1</version><!-- MIGRATED: spring-cloud-dependencies Dalston.RC1 → 2023.0.1 -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

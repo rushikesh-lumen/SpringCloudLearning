@@ -13,7 +13,7 @@
     <name>provider</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version><!-- MIGRATED: Java 1.8 → 17 -->
     </properties>
     <dependencies>
         <dependency>
@@ -31,9 +31,10 @@
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
 
+        <!-- MIGRATED: spring-cloud-starter-sleuth removed in Spring Boot 3.x, replaced with Micrometer Tracing -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId><!-- MIGRATED: replaces spring-cloud-starter-sleuth -->
         </dependency>
 
         <dependency>
