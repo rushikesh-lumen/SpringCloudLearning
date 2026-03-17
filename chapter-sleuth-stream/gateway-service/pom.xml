@@ -22,11 +22,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> <!-- MIGRATED: renamed to netflix-* style in Spring Cloud Finchley+ -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zuul</artifactId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId> <!-- MIGRATED: renamed to netflix-* style in Spring Cloud Finchley+ -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -35,7 +35,7 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
 
 		</dependency>
 		<dependency>
@@ -44,7 +44,7 @@
 		</dependency>
 		<!--<dependency>-->
 			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-zipkin</artifactId>-->
+			<!--<artifactId>spring-cloud-starter-zipkin</artifactId>
 			<!--<version>RELEASE</version>-->
 		<!--</dependency>-->
 

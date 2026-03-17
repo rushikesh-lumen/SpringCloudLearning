@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.7.18</version> <!-- MIGRATED: 2.0.5.RELEASE → 2.7.18 to address CVEs -->
     </parent>
 
     <dependencyManagement>
@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RELEASE</version>
+                <version>2021.0.9</version> <!-- MIGRATED: Finchley.RELEASE → 2021.0.9 compatible with Spring Boot 2.7.x -->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
