@@ -22,37 +22,26 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>  <!-- MIGRATED: spring-cloud-starter-eureka -> spring-cloud-starter-netflix-eureka-client -->
 		</dependency>
 		<!--<dependency>-->
 			<!--<groupId>io.zipkin.java</groupId>-->
 			<!--<artifactId>zipkin-server</artifactId>-->
 		<!--</dependency>-->
 
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-autoconfigure-ui</artifactId>
-		</dependency>
+		<!-- MIGRATED: io.zipkin.java:zipkin-autoconfigure-ui removed - use standalone Zipkin UI -->
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>  <!-- MIGRATED: spring-cloud-sleuth-zipkin-stream -> spring-cloud-sleuth-zipkin -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin</artifactId>
-			<version>1.28.1</version>
-		</dependency>
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-autoconfigure-storage-elasticsearch-http</artifactId>
-			<version>1.28.1</version>
-		</dependency>
+		<!-- MIGRATED: io.zipkin.java:zipkin removed - use standalone Zipkin server -->
+		<!-- MIGRATED: zipkin-autoconfigure-storage-elasticsearch-http removed - use standalone Zipkin -->
 
 	</dependencies>
 

@@ -1,21 +1,21 @@
 package com.forezp;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker; // MIGRATED: HystrixCommand -> CircuitBreaker
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient; // MIGRATED: EnableEurekaClient -> EnableDiscoveryClient
+// MIGRATED: @EnableHystrix removed - Resilience4J is auto-configured
+// MIGRATED: @EnableHystrixDashboard removed - Hystrix Dashboard no longer available
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableDiscoveryClient // MIGRATED: @EnableEurekaClient -> @EnableDiscoveryClient
 @RestController
-@EnableHystrix
-@EnableHystrixDashboard
+// MIGRATED: @EnableHystrix removed
+// MIGRATED: @EnableHystrixDashboard removed
 public class ServiceLucyApplication {
 
 	public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class ServiceLucyApplication {
 	@Value("${server.port}")
 	String port;
 	@RequestMapping("/hi")
-	@HystrixCommand(fallbackMethod = "hiError")
+	@CircuitBreaker(name = "lucyService", fallbackMethod = "hiError") // MIGRATED: circuit breaker instance name updated to lucyService // MIGRATED: @HystrixCommand -> @CircuitBreaker
 	public String home(@RequestParam String name) {
 		return "hi "+name+",i  am lucy and from port:" +port;
 	}

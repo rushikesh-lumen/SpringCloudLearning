@@ -25,24 +25,13 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>  <!-- MIGRATED: spring-cloud-starter-eureka -> spring-cloud-starter-netflix-eureka-client -->
         </dependency>
-        <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-server</artifactId>
-            <version>1.19.0</version>
-        </dependency>
+        <!-- MIGRATED: io.zipkin.java:zipkin-server removed - Zipkin now runs as standalone service -->
 
-        <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-storage-mysql</artifactId>
-            <version>1.19.0</version>
-        </dependency>
+        <!-- MIGRATED: io.zipkin.java:zipkin-storage-mysql removed - use standalone Zipkin with MySQL -->
 
-        <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-autoconfigure-ui</artifactId>
-        </dependency>
+        <!-- MIGRATED: io.zipkin.java:zipkin-autoconfigure-ui removed - use standalone Zipkin UI -->
 
         <dependency>
             <groupId>mysql</groupId>

@@ -22,21 +22,18 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>  <!-- MIGRATED: spring-cloud-starter-eureka -> spring-cloud-starter-netflix-eureka-client -->
 		</dependency>
 		<!--<dependency>-->
 			<!--<groupId>io.zipkin.java</groupId>-->
 			<!--<artifactId>zipkin-server</artifactId>-->
 		<!--</dependency>-->
 
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-autoconfigure-ui</artifactId>
-		</dependency>
+		<!-- MIGRATED: io.zipkin.java:zipkin-autoconfigure-ui removed - use standalone Zipkin UI -->
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>  <!-- MIGRATED: spring-cloud-sleuth-zipkin-stream -> spring-cloud-sleuth-zipkin -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

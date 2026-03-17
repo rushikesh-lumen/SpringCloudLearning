@@ -1,27 +1,26 @@
 package com.forezp.servicehi;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker; // MIGRATED: HystrixCommand -> CircuitBreaker
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.SpringCloudApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+// MIGRATED: @SpringCloudApplication removed - circuit breaker auto-configured
+// MIGRATED: @EnableCircuitBreaker removed - circuit breaker is auto-configured
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient; // MIGRATED: EnableEurekaClient -> EnableDiscoveryClient
+// MIGRATED: @EnableHystrix removed - Resilience4J is auto-configured
+// MIGRATED: @EnableHystrixDashboard removed - Hystrix Dashboard no longer available
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@EnableEurekaClient
-@EnableDiscoveryClient
+@EnableDiscoveryClient // MIGRATED: @EnableEurekaClient -> @EnableDiscoveryClient
 @RestController
-@EnableHystrix
-@EnableHystrixDashboard
-@EnableCircuitBreaker
+// MIGRATED: @EnableHystrix removed
+// MIGRATED: @EnableHystrixDashboard removed
+// MIGRATED: @EnableCircuitBreaker removed
 public class ServiceHiApplication {
 
     /**
@@ -37,7 +36,7 @@ public class ServiceHiApplication {
     String port;
 
     @RequestMapping("/hi")
-    @HystrixCommand(fallbackMethod = "hiError")
+    @CircuitBreaker(name = "hiService", fallbackMethod = "hiError") // MIGRATED: circuit breaker instance name updated to hiService // MIGRATED: @HystrixCommand -> @CircuitBreaker
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
         return "hi " + name + " ,i am from port:" + port;
     }

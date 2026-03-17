@@ -14,29 +14,26 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>3.4.5</version>  <!-- MIGRATED: 1.5.2.RELEASE -> 3.4.5 -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>  <!-- MIGRATED: Java 1.8 -> 17 required for Spring Boot 3.x -->
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>  <!-- MIGRATED: spring-cloud-starter-eureka -> spring-cloud-starter-netflix-eureka-client -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zuul</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>  <!-- MIGRATED: spring-cloud-starter-zuul -> spring-cloud-starter-gateway -->
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+		<!-- MIGRATED: spring-boot-starter-web removed - Spring Cloud Gateway uses reactive WebFlux -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -50,7 +47,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Dalston.RC1</version>
+				<version>2024.0.1</version>  <!-- MIGRATED -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

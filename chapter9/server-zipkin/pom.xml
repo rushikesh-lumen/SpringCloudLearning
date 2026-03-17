@@ -14,14 +14,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>3.4.5</version>  <!-- MIGRATED: 1.5.2.RELEASE -> 3.4.5 -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>  <!-- MIGRATED: Java 1.8 -> 17 required for Spring Boot 3.x -->
 	</properties>
 
 	<dependencies>
@@ -40,15 +40,9 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-server</artifactId>
-		</dependency>
+		<!-- MIGRATED: io.zipkin.java:zipkin-server removed - Zipkin now runs as standalone service -->
 
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-autoconfigure-ui</artifactId>
-		</dependency>
+		<!-- MIGRATED: io.zipkin.java:zipkin-autoconfigure-ui removed - use standalone Zipkin UI -->
 
 	</dependencies>
 
@@ -57,7 +51,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Camden.SR6</version>
+				<version>2024.0.1</version>  <!-- MIGRATED -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

@@ -1,55 +1,45 @@
 package com.forezp.servicezuul.filter;
 
-import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
+// MIGRATED: ZuulFilter -> GlobalFilter (Spring Cloud Gateway)
+import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.core.Ordered;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpServletRequest;
-
 /**
+ * MIGRATED: ZuulFilter -> GlobalFilter (Spring Cloud Gateway)
  * Email miles02@163.com
  *
  * @author fangzhipeng
  * create 2018-07-09
  **/
 @Component
-public class MyFilter extends ZuulFilter {
+public class MyFilter implements GlobalFilter, Ordered { // MIGRATED: extends ZuulFilter -> implements GlobalFilter, Ordered
 
     private static Logger log = LoggerFactory.getLogger(MyFilter.class);
-    @Override
-    public String filterType() {
-        return "pre";
-    }
 
     @Override
-    public int filterOrder() {
-        return 0;
-    }
-
-    @Override
-    public boolean shouldFilter() {
-        return true;
-    }
-
-    @Override
-    public Object run() {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        HttpServletRequest request = ctx.getRequest();
-        log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
-        Object accessToken = request.getParameter("token");
-        if(accessToken == null) {
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) { // MIGRATED: run() -> filter(ServerWebExchange, GatewayFilterChain)
+        String method = exchange.getRequest().getMethod().name();
+        String url = exchange.getRequest().getURI().toString();
+        log.info(String.format("%s >>> %s", method, url));
+        String accessToken = exchange.getRequest().getQueryParams().getFirst("token"); // MIGRATED: RequestContext -> ServerWebExchange
+        if (accessToken == null) {
             log.warn("token is empty");
-            ctx.setSendZuulResponse(false);
-            ctx.setResponseStatusCode(401);
-            try {
-                ctx.getResponse().getWriter().write("token is empty");
-            }catch (Exception e){}
-
-            return null;
+            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED); // MIGRATED: ctx.setResponseStatusCode(401)
+            return exchange.getResponse().setComplete();
         }
         log.info("ok");
-        return null;
+        return chain.filter(exchange);
+    }
+
+    @Override
+    public int getOrder() { // MIGRATED: filterOrder() -> getOrder()
+        return 0;
     }
 }
