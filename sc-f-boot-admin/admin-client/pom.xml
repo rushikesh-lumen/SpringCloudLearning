@@ -21,7 +21,7 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>2.1.0</version>
+            <version>${spring-boot-admin.version}</version> <!-- MIGRATED: 2.1.0 → managed by parent's spring-boot-admin.version (2.7.4) to address CVEs -->
         </dependency>
         <!--<dependency>-->
             <!--<groupId>org.springframework.boot</groupId>-->

@@ -32,6 +32,7 @@
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-autoconfigure-ui</artifactId>
+			<version>2.12.9</version> <!-- MIGRATED: added explicit version, not managed by Hoxton.SR12 BOM -->
 		</dependency>
 
 		<dependency>

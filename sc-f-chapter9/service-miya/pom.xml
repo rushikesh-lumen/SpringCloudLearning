@@ -26,7 +26,11 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId> <!-- MIGRATED: spring-cloud-starter-zipkin → spring-cloud-starter-sleuth + spring-cloud-sleuth-zipkin (renamed in Spring Cloud 2020.0.x) -->
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId> <!-- MIGRATED: added for Zipkin reporting support -->
 		</dependency>
 	</dependencies>
 

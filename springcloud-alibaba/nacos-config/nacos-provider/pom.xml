@@ -41,7 +41,7 @@
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-alibaba-nacos-config -->
 		<dependency>
 			<groupId>com.alibaba.cloud</groupId>
-			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId> <!-- MIGRATED: renamed to spring-cloud-starter-* --> <!-- MIGRATED: org.springframework.cloud → com.alibaba.cloud, version managed by BOM -->
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId> <!-- MIGRATED: renamed from spring-cloud-alibaba-nacos-config, groupId changed to com.alibaba.cloud, version managed by BOM -->
 		</dependency>
 
 	</dependencies>

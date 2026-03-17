@@ -43,11 +43,13 @@
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-server</artifactId>
+			<version>2.12.9</version> <!-- MIGRATED: added explicit version as io.zipkin.java:zipkin-server is not managed by Hoxton.SR12 BOM -->
 		</dependency>
 
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-autoconfigure-ui</artifactId>
+			<version>2.12.9</version> <!-- MIGRATED: added explicit version as io.zipkin.java:zipkin-autoconfigure-ui is not managed by Hoxton.SR12 BOM -->
 		</dependency>
 
 	</dependencies>

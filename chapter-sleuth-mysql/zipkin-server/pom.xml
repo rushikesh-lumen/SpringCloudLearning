@@ -30,18 +30,19 @@
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
-            <version>1.19.0</version>
+            <version>1.28.1</version> <!-- MIGRATED: 1.19.0 → 1.28.1 (latest Zipkin 1.x, consistent with zipkin-storage-mysql) to address CVEs -->
         </dependency>
 
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-storage-mysql</artifactId>
-            <version>1.19.0</version>
+            <version>1.28.1</version> <!-- MIGRATED: 1.19.0 → 1.28.1 (latest Zipkin 1.x MySQL storage) to address CVEs -->
         </dependency>
 
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-autoconfigure-ui</artifactId>
+            <version>1.28.1</version> <!-- MIGRATED: added explicit version matching zipkin-server 1.28.1 for compatibility -->
         </dependency>
 
         <dependency>
