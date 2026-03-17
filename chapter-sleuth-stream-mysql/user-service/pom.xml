@@ -21,21 +21,23 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> <!-- MIGRATED: renamed artifact ID -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- MIGRATED: added spring-cloud-starter-sleuth and spring-cloud-sleuth-zipkin for HTTP-based tracing -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
+		<!-- MIGRATED: spring-cloud-sleuth-zipkin-stream removed; use spring-cloud-sleuth-zipkin for HTTP transport -->
+		<!-- MIGRATED: removed spring-cloud-starter-stream-rabbit; stream-based Sleuth tracing replaced by HTTP-based tracing in Spring Cloud 2021.0.x -->
 
 		<!--<dependency>-->
 			<!--<groupId>org.springframework.cloud</groupId>-->

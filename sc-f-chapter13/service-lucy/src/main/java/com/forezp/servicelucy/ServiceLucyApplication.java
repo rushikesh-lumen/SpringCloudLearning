@@ -1,14 +1,14 @@
 package com.forezp.servicelucy;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker; // MIGRATED: replaced HystrixCommand with Resilience4J CircuitBreaker
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+// MIGRATED: removed EnableCircuitBreaker import (Resilience4J is auto-configured)
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+// MIGRATED: removed EnableHystrix import (Resilience4J is auto-configured)
+// MIGRATED: removed EnableHystrixDashboard import (no replacement in Spring Cloud 2021.0.x)
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @RestController
-@EnableHystrix
-@EnableHystrixDashboard
-@EnableCircuitBreaker
+// MIGRATED: removed @EnableHystrix (Resilience4J auto-configured via spring-cloud-starter-circuitbreaker-resilience4j)
+// MIGRATED: removed @EnableHystrixDashboard (no equivalent in Spring Cloud 2021.0.x; use Actuator + Micrometer)
+// MIGRATED: removed @EnableCircuitBreaker (Resilience4J auto-configured)
 public class ServiceLucyApplication {
 
     public static void main(String[] args) {
@@ -29,12 +29,12 @@ public class ServiceLucyApplication {
     String port;
 
     @RequestMapping("/hi")
-    @HystrixCommand(fallbackMethod = "hiError")
+    @CircuitBreaker(name = "default", fallbackMethod = "hiError") // MIGRATED: replaced @HystrixCommand with Resilience4J @CircuitBreaker
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
         return "hi " + name + " ,i am from port:" + port;
     }
 
-    public String hiError(String name) {
+    public String hiError(String name, Throwable t) { // MIGRATED: added Throwable parameter required by Resilience4J
         return "hi,"+name+",sorry,error!";
     }
 }

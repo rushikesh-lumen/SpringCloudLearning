@@ -11,9 +11,9 @@
     <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.4.4</spring-boot.version>
-        <spring-cloud.version>2020.0.2</spring-cloud.version>
-        <spring-cloud-alibaba.version>2020.0.RC1</spring-cloud-alibaba.version>
+        <spring-boot.version>2.7.18</spring-boot.version> <!-- MIGRATED: upgraded from 2.4.4 to fix CVEs -->
+        <spring-cloud.version>2021.0.9</spring-cloud.version> <!-- MIGRATED: upgraded from 2020.0.2 to fix CVEs -->
+        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version> <!-- MIGRATED: upgraded from 2020.0.RC1 to fix CVEs -->
     </properties>
 
     <modules>
@@ -42,7 +42,7 @@
             </dependency>
             <!-- spring cloud alibaba 依赖 -->
             <dependency>
-                <groupId>com.alibaba.cloud</groupId>
+                <groupId>com.alibaba.cloud</groupId> <!-- MIGRATED: verified groupId -->
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>

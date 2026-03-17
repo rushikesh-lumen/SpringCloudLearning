@@ -7,11 +7,14 @@ server:
 spring:
   application:
     name: service-zuul
-zuul:
-  routes:
-    api-a:
-      path: /api-a/**
-      serviceId: service-ribbon
-    api-b:
-      path: /api-b/**
-      serviceId: service-feign
+  cloud:
+    gateway:
+      routes: # MIGRATED: replaced zuul.routes with spring.cloud.gateway.routes
+        - id: api-a # MIGRATED: converted from Zuul route to Spring Cloud Gateway route
+          uri: lb://service-ribbon # MIGRATED: lb:// prefix for load-balanced service calls
+          predicates:
+            - Path=/api-a/**
+        - id: api-b # MIGRATED: converted from Zuul route to Spring Cloud Gateway route
+          uri: lb://service-feign # MIGRATED: lb:// prefix for load-balanced service calls
+          predicates:
+            - Path=/api-b/**

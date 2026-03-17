@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.4.RELEASE</version>
+		<version>2.7.18</version> <!-- MIGRATED: upgraded from 2.1.4.RELEASE to fix CVEs -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.forezp</groupId>
@@ -16,7 +16,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+		<spring-cloud.version>2021.0.9</spring-cloud.version> <!-- MIGRATED: upgraded from Greenwich.RELEASE to fix CVEs -->
+		<spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version> <!-- MIGRATED: added Spring Cloud Alibaba version -->
 	</properties>
 
 	<dependencies>
@@ -33,9 +34,9 @@
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-alibaba-nacos-discovery -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
+			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-			<version>0.9.0.RELEASE</version>
+			<!-- MIGRATED: version managed by spring-cloud-alibaba-dependencies BOM -->
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-alibaba-nacos-config -->
@@ -54,6 +55,14 @@
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- MIGRATED: added Spring Cloud Alibaba BOM for version management -->
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

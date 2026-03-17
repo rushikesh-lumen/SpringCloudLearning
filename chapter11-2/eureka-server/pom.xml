@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>2.7.18</version> <!-- MIGRATED: upgraded from 1.5.2.RELEASE to fix CVEs -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -28,7 +28,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId> <!-- MIGRATED: renamed artifact ID -->
 		</dependency>
 
 		<dependency>
@@ -43,7 +43,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Dalston.RC1</version>
+				<version>2021.0.9</version> <!-- MIGRATED: upgraded from Dalston.RC1 to fix CVEs -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -86,14 +86,7 @@
 	</build>
 
 	<repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+	<!-- MIGRATED: removed spring-milestones repository - no longer needed for GA releases -->
 	</repositories>
 
 
