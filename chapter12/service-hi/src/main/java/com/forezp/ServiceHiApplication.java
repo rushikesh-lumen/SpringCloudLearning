@@ -25,7 +25,7 @@ public class ServiceHiApplication {
 	@Value("${server.port}")
 	String port;
 	@RequestMapping("/hi")
-	@CircuitBreaker(name = "hiError", fallbackMethod = "hiError") // MIGRATED: @HystrixCommand -> @CircuitBreaker
+	@CircuitBreaker(name = "hiService", fallbackMethod = "hiError") // MIGRATED: circuit breaker instance name updated to hiService // MIGRATED: @HystrixCommand -> @CircuitBreaker
 	public String home(@RequestParam String name) {
 		return "hi "+name+",i am from port:" +port;
 	}

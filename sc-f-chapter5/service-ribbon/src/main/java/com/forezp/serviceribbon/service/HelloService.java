@@ -17,7 +17,7 @@ public class HelloService {
     @Autowired
     RestTemplate restTemplate;
 
-    @CircuitBreaker(name = "hiError", fallbackMethod = "hiError") // MIGRATED: @HystrixCommand -> @CircuitBreaker
+    @CircuitBreaker(name = "ribbonService", fallbackMethod = "hiError") // MIGRATED: circuit breaker instance name updated to ribbonService // MIGRATED: @HystrixCommand -> @CircuitBreaker
     public String hiService(String name) {
         return restTemplate.getForObject("http://SERVICE-HI/hi?name="+name,String.class);
     }

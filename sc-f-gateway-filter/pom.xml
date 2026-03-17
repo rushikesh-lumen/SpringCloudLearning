@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.5</version>  <!-- MIGRATED: 2.0.5.RELEASE -> 2.7.18 -->
+        <version>3.4.5</version>  <!-- MIGRATED: 2.0.5.RELEASE -> 3.4.5 -->
     </parent>
 
     <dependencyManagement>

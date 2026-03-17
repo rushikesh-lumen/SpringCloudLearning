@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.5</version>  <!-- MIGRATED: 1.5.2.RELEASE -> 2.7.18 -->
+		<version>3.4.5</version>  <!-- MIGRATED: 1.5.2.RELEASE -> 3.4.5 -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -33,11 +33,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-actuator</artifactId>  <!-- MIGRATED: spring-cloud-starter-hystrix-dashboard removed, using actuator -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
