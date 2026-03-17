@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>2.7.18</version> <!-- MIGRATED: upgraded from 1.5.2.RELEASE to fix CVEs -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -43,11 +43,13 @@
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-server</artifactId>
+			<version>2.12.9</version> <!-- MIGRATED: added explicit version 2.12.9, Zipkin 2.x -->
 		</dependency>
 
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-autoconfigure-ui</artifactId>
+			<version>2.12.9</version> <!-- MIGRATED: added explicit version 2.12.9, Zipkin 2.x -->
 		</dependency>
 
 	</dependencies>
@@ -57,7 +59,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Camden.SR6</version>
+				<version>2021.0.9</version> <!-- MIGRATED: upgraded from Camden.SR6 to fix CVEs -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

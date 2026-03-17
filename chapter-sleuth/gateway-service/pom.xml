@@ -22,20 +22,21 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> <!-- MIGRATED: renamed artifact ID -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zuul</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId> <!-- MIGRATED: replaced Zuul with Spring Cloud Gateway -->
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+		<!-- MIGRATED: removed spring-boot-starter-web (incompatible with Spring Cloud Gateway reactive/WebFlux) -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
-			<version>RELEASE</version>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+</dependency>
+<!-- MIGRATED: spring-cloud-starter-zipkin replaced by spring-cloud-sleuth-zipkin -->
+<dependency>
+<groupId>org.springframework.cloud</groupId>
+<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
 
 	</dependencies>

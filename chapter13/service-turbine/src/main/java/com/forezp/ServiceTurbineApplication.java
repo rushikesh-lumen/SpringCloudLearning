@@ -3,10 +3,10 @@ package com.forezp;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.netflix.turbine.EnableTurbine;
+// MIGRATED: removed EnableTurbine import (Turbine removed from Spring Cloud 2021.0.x)
 
 @SpringBootApplication
-@EnableTurbine
+// MIGRATED: removed @EnableTurbine (Turbine removed from Spring Cloud 2021.0.x)
 
 public class ServiceTurbineApplication {
 

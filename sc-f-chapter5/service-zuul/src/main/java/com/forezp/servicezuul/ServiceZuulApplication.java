@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+// MIGRATED: removed EnableZuulProxy import (Spring Cloud Gateway replaces Zuul)
 
 @SpringBootApplication
-@EnableZuulProxy
+// MIGRATED: removed @EnableZuulProxy (Spring Cloud Gateway is auto-configured)
 @EnableEurekaClient
 @EnableDiscoveryClient
 public class ServiceZuulApplication {

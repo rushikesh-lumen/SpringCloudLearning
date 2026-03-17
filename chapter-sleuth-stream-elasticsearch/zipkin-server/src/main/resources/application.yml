@@ -7,7 +7,7 @@ server:
 spring:
   application:
     name: zipkin-server
-  sleuth:
+  sleuth: # MIGRATED: updated sleuth config
     enabled: false
   rabbitmq:
     host: localhost
