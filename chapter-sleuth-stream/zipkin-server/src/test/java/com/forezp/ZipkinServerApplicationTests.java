@@ -1,11 +1,11 @@
 package com.forezp;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test; // MIGRATED: JUnit 4 -> JUnit 5
+// MIGRATED: @RunWith removed - JUnit 5 uses @ExtendWith automatically with @SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+// MIGRATED: SpringRunner replaced by SpringExtension in JUnit 5 (auto-configured by @SpringBootTest)
 
-@RunWith(SpringRunner.class)
+// MIGRATED: @RunWith(SpringRunner.class) removed - JUnit 5 uses SpringExtension automatically
 @SpringBootTest
 public class ZipkinServerApplicationTests {
 

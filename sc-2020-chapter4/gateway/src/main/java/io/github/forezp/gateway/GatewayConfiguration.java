@@ -20,7 +20,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.web.reactive.result.view.ViewResolver;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct; // MIGRATED: javax.annotation -> jakarta.annotation
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
