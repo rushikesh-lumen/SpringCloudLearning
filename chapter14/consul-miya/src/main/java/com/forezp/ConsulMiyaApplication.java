@@ -2,7 +2,7 @@ package com.forezp;
 
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+// MIGRATED: removed unused SpringApplicationBuilder import
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +18,6 @@ public class ConsulMiyaApplication {
 	}
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(ConsulMiyaApplication.class).web(true).run(args);
+		SpringApplication.run(ConsulMiyaApplication.class, args); // MIGRATED: replaced SpringApplicationBuilder.web(boolean) which was removed in Spring Boot 2.x
 	}
 }

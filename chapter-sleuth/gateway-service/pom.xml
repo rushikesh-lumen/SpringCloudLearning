@@ -32,11 +32,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
-</dependency>
-<!-- MIGRATED: spring-cloud-starter-zipkin replaced by spring-cloud-sleuth-zipkin -->
-<dependency>
-<groupId>org.springframework.cloud</groupId>
-<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency>
+		<!-- MIGRATED: spring-cloud-starter-zipkin replaced by spring-cloud-sleuth-zipkin -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
 
 	</dependencies>

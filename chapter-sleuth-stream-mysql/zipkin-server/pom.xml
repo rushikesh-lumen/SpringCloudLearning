@@ -32,10 +32,12 @@
 <dependency>
 <groupId>io.zipkin.java</groupId>
 <artifactId>zipkin-server</artifactId>
+<version>2.12.9</version> <!-- MIGRATED: updated to Zipkin 2.x (last Java 8 compatible) -->
 </dependency>
 <dependency>
 <groupId>io.zipkin.java</groupId>
 <artifactId>zipkin-autoconfigure-ui</artifactId>
+<version>2.12.9</version> <!-- MIGRATED: updated to Zipkin 2.x UI -->
 </dependency>
 		<!-- MIGRATED: spring-cloud-sleuth-zipkin-stream removed; use spring-cloud-sleuth-zipkin for HTTP transport -->
 		<!-- MIGRATED: removed spring-cloud-starter-stream-rabbit; HTTP transport used instead -->

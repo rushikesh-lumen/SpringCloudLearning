@@ -24,7 +24,15 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> <!-- MIGRATED: renamed artifact ID -->
 		</dependency>
-		<!-- MIGRATED: removed old io.zipkin.java:zipkin-server (Zipkin 1.x); run Zipkin 2.x as standalone server -->
+		<!-- MIGRATED: updated to Zipkin 2.x standalone approach -->
+<dependency>
+<groupId>io.zipkin.java</groupId>
+<artifactId>zipkin-server</artifactId>
+</dependency>
+<dependency>
+<groupId>io.zipkin.java</groupId>
+<artifactId>zipkin-autoconfigure-ui</artifactId>
+</dependency>
 		<!-- MIGRATED: removed old zipkin-autoconfigure-ui; Zipkin UI is provided by the standalone Zipkin server -->
 	</dependencies>
 

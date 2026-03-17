@@ -30,7 +30,7 @@
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
-            <version>1.19.0</version>
+            <version>2.12.9</version> <!-- MIGRATED: updated from 1.19.0 to 2.12.9 (Zipkin 2.x) -->
         </dependency>
 		<!-- MIGRATED: zipkin-storage-mysql 1.x removed; MySQL storage is configured via standalone Zipkin server -->
 		<!-- MIGRATED: removed old zipkin-autoconfigure-ui; Zipkin UI is provided by the standalone Zipkin server -->

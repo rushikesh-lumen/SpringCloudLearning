@@ -2,7 +2,7 @@ package com.forezp;
 
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.SpringApplication;
 // MIGRATED: removed EnableTurbine import (Turbine removed from Spring Cloud 2021.0.x)
 
 @SpringBootApplication
@@ -12,6 +12,6 @@ public class ServiceTurbineApplication {
 
 	public static void main(String[] args) {
 
-			new SpringApplicationBuilder(ServiceTurbineApplication.class).web(true).run(args);
+			SpringApplication.run(ServiceTurbineApplication.class, args); // MIGRATED: replaced SpringApplicationBuilder.web(boolean) which was removed in Spring Boot 2.x
 	}
 }
