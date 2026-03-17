@@ -30,6 +30,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                        <version>3.1.8</version> <!-- MIGRATED: Explicit version required - removed from Spring Cloud 2021.0.x BOM -->
         </dependency>
     </dependencies>
 

@@ -21,7 +21,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId> <!-- MIGRATED: spring-cloud-starter-eureka → spring-cloud-starter-netflix-eureka-client -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -30,7 +30,7 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId> <!-- MIGRATED: spring-cloud-starter-zipkin → spring-cloud-starter-sleuth (includes Zipkin in 2021.0.x) -->
 			<version>RELEASE</version>
 		</dependency>
 	</dependencies>
