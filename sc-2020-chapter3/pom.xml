@@ -10,10 +10,10 @@
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
     <properties>
-        <java.version>1.8</java.version>
-        <spring-boot.version>2.4.4</spring-boot.version>
-        <spring-cloud.version>2020.0.2</spring-cloud.version>
-<!--        <spring-cloud-alibaba.version>2020.0.RC1</spring-cloud-alibaba.version>-->
+        <java.version>17</java.version> <!-- MIGRATED: Java 8 (1.8) → Java 17 LTS -->
+        <spring-boot.version>2.7.18</spring-boot.version> <!-- MIGRATED: 2.4.4 → 2.7.18 -->
+        <spring-cloud.version>2021.0.9</spring-cloud.version> <!-- MIGRATED: Spring Cloud 2020.0.2 → 2021.0.9 -->
+<!--        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version> <!-- MIGRATED: Alibaba 2020.0.RC1 → 2021.0.5.0 -->-->
         <spring-cloud-alibaba.version> 2021.1</spring-cloud-alibaba.version>
 
 

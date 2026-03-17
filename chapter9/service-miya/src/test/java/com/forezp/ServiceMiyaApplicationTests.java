@@ -1,11 +1,11 @@
 package com.forezp;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test; // MIGRATED: JUnit 4 @Test → JUnit 5 @Test
+import org.junit.jupiter.api.extension.ExtendWith; // MIGRATED: JUnit 4 @RunWith → JUnit 5 @ExtendWith
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension; // MIGRATED: SpringRunner (JUnit 4) → SpringExtension (JUnit 5)
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class) // MIGRATED: @RunWith(SpringRunner.class) → @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class ServiceMiyaApplicationTests {
 
