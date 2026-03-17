@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2021.0.9</version> <!-- MIGRATED: Spring Cloud Finchley.RELEASE → 2021.0.9 -->
+    <version>2021.0.9</version> <!-- MIGRATED: Spring Cloud Finchley.RELEASE → 2021.0.9 -->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

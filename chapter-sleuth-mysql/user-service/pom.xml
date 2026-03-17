@@ -30,8 +30,7 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId> <!-- MIGRATED: spring-cloud-starter-zipkin → spring-cloud-starter-sleuth (includes Zipkin in 2021.0.x) -->
-			<version>RELEASE</version>
+			<artifactId>spring-cloud-starter-sleuth</artifactId> <!-- MIGRATED: spring-cloud-starter-zipkin → spring-cloud-starter-sleuth (includes Zipkin in 2021.0.x) --> <!-- MIGRATED: RELEASE version removed - version managed by Spring Cloud BOM 2021.0.9 -->
 		</dependency>
 	</dependencies>
 
