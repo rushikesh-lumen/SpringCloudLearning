@@ -10,7 +10,7 @@
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version> <!-- MIGRATED: Updated Java version from 1.8 to 17 LTS -->
         <spring-boot.version>2.4.4</spring-boot.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
 <!--        <spring-cloud-alibaba.version>2020.0.RC1</spring-cloud-alibaba.version>-->
