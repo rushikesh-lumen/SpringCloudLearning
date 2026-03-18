@@ -1,12 +1,12 @@
 //package gateway;
 //
-//import org.junit.Test;
-//import org.junit.runner.RunWith;
+//import org.junit.jupiter.api.Test; // MIGRATED: Updated from JUnit 4 (org.junit.Test) to JUnit 5 (org.junit.jupiter.api.Test)
+//// MIGRATED: Removed import org.junit.runner.RunWith - not needed in JUnit 5
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;
 //import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
-//import org.springframework.test.context.junit4.SpringRunner;
+//// MIGRATED: Removed import org.springframework.test.context.junit4.SpringRunner - not needed in JUnit 5
 //import org.springframework.test.web.reactive.server.WebTestClient;
 //
 //import static com.github.tomakehurst.wiremock.client.WireMock.*;
@@ -16,7 +16,7 @@
 // * @author Ryan Baxter
 // */
 //// tag::code[]
-//@RunWith(SpringRunner.class)
+//// MIGRATED: Removed @RunWith(SpringRunner.class) - not needed in JUnit 5 (Spring Boot auto-registers SpringExtension via @SpringBootTest)
 //@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
 //		properties = {"httpbin=http://localhost:${wiremock.server.port}"})
 //@AutoConfigureWireMock(port = 0)
