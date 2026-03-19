@@ -13,7 +13,7 @@
     <name>gateway</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>21</java.version> <!-- MIGRATED: java.version 1.8 -> 21 -->
         <spring-cloud.version>2020.0.2</spring-cloud.version>
     </properties>
     <dependencies>
